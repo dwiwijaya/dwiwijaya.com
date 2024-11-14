@@ -5,13 +5,14 @@ import { useRouter } from 'next/router';
 import BlogSidebar from './partials/BlogSidebar';
 
 const Layout = ({ lastUpdate, children }) => {
-    const router = useRouter();
-  const pageName = router.pathname.split('/')[1];
 
-  const isBlog = pageName === 'blog' || router.pathname.startsWith('/blog/') ;
+    const router = useRouter();
+    const pageName = router.pathname.split('/')[1];
+    const isBlog = pageName === 'blog' || router.pathname.startsWith('/blog/');
+
     return (
         <>
-            {isBlog ? <BlogSidebar lastUpdate={lastUpdate}/> :  <Sidebar lastUpdate={lastUpdate}/>}
+            {isBlog ? <BlogSidebar lastUpdate={lastUpdate} /> : <Sidebar lastUpdate={lastUpdate} />}
             <div className='group/main main ml-0 lg:ml-64 '>
                 <Overlay />
                 {children}
