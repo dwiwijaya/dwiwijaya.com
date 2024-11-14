@@ -7,7 +7,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 
-const BlogPage = () => {
+const CollectionPage = () => {
 
     const t = useTranslations();
     const router = useRouter();
@@ -21,24 +21,12 @@ const BlogPage = () => {
             <Head>
                 <link rel="canonical" href={canonicalUrl} />
             </Head>
-            <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} description={t('Blog.metaDesc')} />
+            <NextSeo title={`${PAGE_TITLE} - Dwisheets`} description={t('Blog.metaDesc')} />
 
             <Container data-aos='fade-up'>
-                <PageHeading
-                    title={PAGE_TITLE}
-                    description={PAGE_DESCRIPTION}
-                />
-                <Blog />
             </Container>
         </>
     )
 }
 
-export default BlogPage
-export const getStaticProps = async () => {
-
-    return {
-        props: {
-        },
-    };
-};
+export default CollectionPage
