@@ -131,19 +131,19 @@ export const BLOG_MENU_ITEMS = [
         },
     },
     {
-        href: "/blog/support-author",
-        iconClass: "fad fa-heart",
-        label: {
-            en: "Support Author",
-            id: "Dukung Penulis",
-        },
-    },
-    {
         href: "/blog/account",
         iconClass: "fad fa-user",
         label: {
-            en: "My Account",
+            en: "Account",
             id: "Akun Saya",
+        },
+    },
+    {
+        href: "/blog/support-author",
+        iconClass: "fad fa-heart",
+        label: {
+            en: "Support",
+            id: "Dukung",
         },
     },
 ];
