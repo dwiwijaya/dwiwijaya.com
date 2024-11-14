@@ -87,7 +87,7 @@ const BlogSidebar = ({ className, lastUpdate }) => {
                     <div className="ml-6 flex flex-col gap-8">
                         <button
                             data-umami-event={`Click Logo`}
-                            onClick={() => { setToggle(false); Router.push('/'); }}
+                            onClick={() => { setToggle(false); Router.push('/blog'); }}
                             aria-label='go home'
                             className="w-fit mt-2 "
                         >
