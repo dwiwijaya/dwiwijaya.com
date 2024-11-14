@@ -22,3 +22,10 @@ const Custom404 = () => {
 }
 
 export default Custom404
+
+export const getStaticProps = async () => {
+
+    return {
+        props: {},
+    };
+};

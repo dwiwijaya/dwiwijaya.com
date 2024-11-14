@@ -30,3 +30,11 @@ const SupportPage = () => {
 }
 
 export default SupportPage
+
+export const getStaticProps = async () => {
+
+    return {
+        props: {
+        },
+    };
+};

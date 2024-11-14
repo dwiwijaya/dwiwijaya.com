@@ -35,10 +35,9 @@ const ServicesPage = () => {
 }
 
 export default ServicesPage
-export const getStaticProps = async () => {
 
+export const getStaticProps = async () => {
     return {
-        props: {
-        },
+        props: {},
     };
 };

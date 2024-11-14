@@ -30,3 +30,11 @@ const CollectionPage = () => {
 }
 
 export default CollectionPage
+
+export const getStaticProps = async () => {
+
+    return {
+        props: {
+        },
+    };
+};

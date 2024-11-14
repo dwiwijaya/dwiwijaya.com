@@ -22,3 +22,10 @@ const Custom500 = () => {
 }
 
 export default Custom500
+
+export const getStaticProps = async () => {
+
+    return {
+        props: {},
+    };
+};

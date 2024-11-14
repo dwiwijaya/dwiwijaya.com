@@ -38,7 +38,7 @@ const ExperiencePage = ({ experience }) => {
 
 export default ExperiencePage
 export const getStaticProps = async () => {
-    // const readStats = await getReadStats();
+
     const experience = await fetcher(`${process.env.API_URL}/experience`)
 
     return {

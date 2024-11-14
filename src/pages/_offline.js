@@ -57,7 +57,6 @@ export default Fallback;
 export const getStaticProps = async () => {
 
   return {
-      props: {
-      },
+    props: {},
   };
 };

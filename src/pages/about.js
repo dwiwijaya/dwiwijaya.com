@@ -35,10 +35,10 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+
 export const getStaticProps = async () => {
 
     return {
-        props: {
-        },
+      props: {},
     };
-};
+  };

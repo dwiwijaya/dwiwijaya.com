@@ -83,19 +83,11 @@ export const MENU_ITEMS = [
 
 export const BLOG_MENU_ITEMS = [
     {
-        href: "/",
+        href: "/blog",
         iconClass: "fad fa-home",
         label: {
             en: "Home",
             id: "Beranda",
-        },
-    },
-    {
-        href: "/blog",
-        iconClass: "fad fa-newspaper",
-        label: {
-            en: "Articles",
-            id: "Artikel",
         },
     },
     {

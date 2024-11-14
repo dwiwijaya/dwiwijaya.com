@@ -95,6 +95,13 @@ const BlogSidebar = ({ className, lastUpdate }) => {
                         </button>
                         <div className="text-left mt-4 sm:mt-8">
                             <h2 className='text-2xl mb-2 leading-6 font-se'>{t('Sidebar.welcome')}</h2>
+                            <span className="text-sm text-subtext">
+                                {t("Sidebar.lastupdate")} : {new Date(lastUpdate).toLocaleDateString(locale, {
+                                    day: 'numeric',
+                                    month: 'short',
+                                    year: 'numeric'
+                                })}
+                            </span>
                         </div>
 
                         <div className="flex gap-2 flex-col">
@@ -117,7 +124,7 @@ const BlogSidebar = ({ className, lastUpdate }) => {
                     </nav>
                 </div>
                 <div className="nav__footer text-left pl-6">
-                    <span className="text-subtext text-sm transform rotate-180 ">&copy; {new Date().getFullYear()} Dwi Wijaya</span>
+                    <Link href="/" aria-label='Dwi Wijaya' className="text-subtext text-sm transform rotate-180 ">&copy; {new Date().getFullYear()} Dwi Wijaya</Link>
                 </div>
                 <div onClick={() => setToggle(!toggle)} className={`toggle lg:-left-64 left-5 sidebar__toggle ${toggle ? '!left-[17rem]' : ''}`}>
                     <i className="fa-duotone fa-bars text-primary"></i>

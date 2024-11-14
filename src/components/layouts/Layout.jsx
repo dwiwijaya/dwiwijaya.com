@@ -11,7 +11,7 @@ const Layout = ({ lastUpdate, children }) => {
   const isBlog = pageName === 'blog' || router.pathname.startsWith('/blog/') ;
     return (
         <>
-            {isBlog ? <BlogSidebar/> :  <Sidebar lastUpdate={lastUpdate}/>}
+            {isBlog ? <BlogSidebar lastUpdate={lastUpdate}/> :  <Sidebar lastUpdate={lastUpdate}/>}
             <div className='group/main main ml-0 lg:ml-64 '>
                 <Overlay />
                 {children}

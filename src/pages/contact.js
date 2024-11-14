@@ -36,10 +36,10 @@ const ContactPage = () => {
 }
 
 export default ContactPage
+
 export const getStaticProps = async () => {
 
   return {
-      props: {
-      },
+    props: {},
   };
 };

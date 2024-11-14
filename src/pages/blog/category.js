@@ -30,3 +30,11 @@ const CategoryPage = () => {
 }
 
 export default CategoryPage
+
+export const getStaticProps = async () => {
+
+    return {
+        props: {
+        },
+    };
+};

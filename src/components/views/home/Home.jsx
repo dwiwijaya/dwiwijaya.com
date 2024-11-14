@@ -31,9 +31,9 @@ const Home = () => {
                 </h1>
 
             </div>
-            <p className="flex items-center gap-2 my-2 text-text">
+            <h2 className="flex items-center gap-2 my-2 text-text">
                 {t('Home.introduction')} <BiCodeAlt className='text-primary'/> &nbsp;
-            </p>
+            </h2>
             <p className='text-subtext text-sm'>
                 {t('Home.passion')}
             </p>

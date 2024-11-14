@@ -30,3 +30,11 @@ const AccountPage = () => {
 }
 
 export default AccountPage
+
+export const getStaticProps = async () => {
+
+    return {
+        props: {
+        },
+    };
+};
