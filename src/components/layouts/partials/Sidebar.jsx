@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import LogoDark from '@/assets/logo-dark.svg';
 import LogoLight from '@/assets/logo-light.svg';
-import { MENU_ITEMS } from '@/constants/data/menu';
+import { BLOG_MENU_ITEMS, MENU_ITEMS } from '@/constants/data/menu';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
@@ -14,13 +14,19 @@ import { useSwipeable } from 'react-swipeable';
 import { useTranslations } from 'next-intl';
 
 const Sidebar = ({ className, lastUpdate }) => {
+
     const [mounted, setMounted] = useState(false)
     const [toggle, setToggle] = useState(false);
     const { theme } = useTheme();
-    const sidebarRef = useRef(null);
-    const pathname = usePathname()
-    const t = useTranslations();
     const { locale } = useRouter();
+    const pathname = usePathname()
+    const router = useRouter();
+    const pageName = router.pathname.split('/')[1];
+    const isBlog = pageName === 'blog' || router.pathname.startsWith('/blog/');
+    const t = useTranslations();
+
+    const SIDEBAR_MENU_ITEMS = isBlog ? BLOG_MENU_ITEMS : MENU_ITEMS
+
     useEffect(() => {
         setMounted(true)
     }, [])
@@ -87,7 +93,7 @@ const Sidebar = ({ className, lastUpdate }) => {
                     <div className="ml-6 flex flex-col gap-8">
                         <button
                             data-umami-event={`Click Logo`}
-                            onClick={() => { setToggle(false); Router.push('/'); }}
+                            onClick={() => { setToggle(false); Router.push(isBlog ? '/blog' : '/'); }}
                             aria-label='go home'
                             className="w-fit mt-2 "
                         >
@@ -112,7 +118,7 @@ const Sidebar = ({ className, lastUpdate }) => {
                     <nav className="nav">
                         <div className="nav__menu p-6 bg-background rounded-l-none rounded-2xl">
                             <ul className="flex flex-col items-center">
-                                {MENU_ITEMS.map((item, index) => (
+                                {SIDEBAR_MENU_ITEMS.map((item, index) => (
                                     <li key={index} className='nav__item w-full group py-2'>
                                         <Link tabIndex={0} aria-label={item.label[locale]} onClick={() => setToggle(false)} href={item.href} title={item.label[locale]} className={`${pathname === item.href ? '!text-primary' : ''} hover:text-primary  text-text   h-full transition-300 flex items-center justify-between`}>
                                             <span className='flex items-center gap-3'><i className={`${item.iconClass} min-w-5 flex justify-center items-center group-hover:-rotate-[8deg] duration-300 transition-all`}></i> {item.label[locale]}</span> {pathname === item.href && <i className="fad fa-arrow-right animate-pulse"></i>}
@@ -124,7 +130,20 @@ const Sidebar = ({ className, lastUpdate }) => {
                     </nav>
                 </div>
                 <div className="nav__footer text-left pl-6">
-                    <span className="text-subtext text-sm transform rotate-180 ">&copy; {new Date().getFullYear()} Dwi Wijaya</span>
+                    <button
+                        data-umami-event={isBlog ? 'Go to www.dwiwijaya.com' : 'Go to Home'}
+                        onClick={() => { Router.push('/'); }}
+                        aria-label={isBlog ? 'Go to www.dwiwijaya.com' : 'go to home'}
+                        className="text-subtext text-sm flex items-center">
+                        {isBlog ? (
+                            <>
+                                <i className="fad fa-arrow-left mr-3 text-primary"></i> www.dwiwijaya.com
+                            </>
+                        ) : (
+                            `© ${new Date().getFullYear()} Dwi Wijaya`
+                        )}
+                    </button>
+
                 </div>
                 <div onClick={() => setToggle(!toggle)} className={`toggle lg:-left-64 left-5 sidebar__toggle ${toggle ? '!left-[17rem]' : ''}`}>
                     <i className="fa-duotone fa-bars text-primary"></i>
