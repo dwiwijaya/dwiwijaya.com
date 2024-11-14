@@ -84,15 +84,15 @@ export const MENU_ITEMS = [
 export const BLOG_MENU_ITEMS = [
     {
         href: "/blog",
-        iconClass: "fad fa-home",
+        iconClass: "fad fa-rss",
         label: {
-            en: "Home",
-            id: "Beranda",
+            en: "Blog",
+            id: "Blog",
         },
     },
     {
         href: "/blog/category",
-        iconClass: "fad fa-th-list",
+        iconClass: "fad fa-layer-group",
         label: {
             en: "Categories",
             id: "Kategori",
@@ -108,7 +108,7 @@ export const BLOG_MENU_ITEMS = [
     },
     {
         href: "/blog/collection",
-        iconClass: "fad fa-bookmark",
+        iconClass: "fad fa-clone",
         label: {
             en: "Collection",
             id: "Koleksi",
@@ -135,7 +135,7 @@ export const BLOG_MENU_ITEMS = [
         iconClass: "fad fa-user",
         label: {
             en: "Account",
-            id: "Akun Saya",
+            id: "Akun",
         },
     },
     {
