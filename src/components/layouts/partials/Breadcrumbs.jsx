@@ -36,7 +36,7 @@ const Breadcrumbs = () => {
   return (
     <nav aria-label="Breadcrumbs" className='flex items-center gap-2'>
       <Link href="/">
-        Dwi Sheets
+        Dwi Wijaya
       </Link>
       <i className="fal fa-xs fa-chevron-right" />
       {breadcrumbItems}
