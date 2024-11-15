@@ -19,9 +19,8 @@ const Blog = () => {
                     <h2 className='tracking-wider'> Where ideas are shared, stories unfold <br /> and new perspectives are discovered.</h2>
                     <Link className='btn !px-3 !py-2' href="/blog/explore">Browse the Sheets <i className="fad fa-feather"></i></Link>
                 </div>
-                <Image src={Reading} alt="Reading" width={200} height={200} className='hidden h-44 md:flex xl:h-72 scale-x-[-1] flex-1' />
+                <Image src={Reading} alt="Reading" width={200} height={200} className='hidden h-56 md:flex xl:h-72 scale-x-[-1] flex-1' />
             </div>
-            <hr className='hr !my-12' />
         </>
     )
 }
