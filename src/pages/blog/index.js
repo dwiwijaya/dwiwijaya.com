@@ -21,7 +21,7 @@ const BlogPage = () => {
             <Head>
                 <link rel="canonical" href={canonicalUrl} />
             </Head>
-            <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} description={t('Blog.metaDesc')} />
+            <NextSeo title={`${PAGE_TITLE} - Dwisheets`} description={t('Blog.metaDesc')} />
 
             <Container data-aos='fade-up'>
                 <Blog />
