@@ -24,10 +24,6 @@ const BlogPage = () => {
             <NextSeo title={`${PAGE_TITLE} - Dwi Wijaya`} description={t('Blog.metaDesc')} />
 
             <Container data-aos='fade-up'>
-                <PageHeading
-                    title={PAGE_TITLE}
-                    description={PAGE_DESCRIPTION}
-                />
                 <Blog />
             </Container>
         </>
