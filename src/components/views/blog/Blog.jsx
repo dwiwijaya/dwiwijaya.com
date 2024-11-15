@@ -21,6 +21,18 @@ const Blog = () => {
                 </div>
                 <Image src={Reading} alt="Reading" width={200} height={200} className='hidden h-56 md:flex xl:h-72 scale-x-[-1] flex-1' />
             </div>
+            <svg class="absolute inset-0 -z-10 h-full w-full stroke-stroke [mask-image:radial-gradient(50%_150%_at_top_center,white,transparent)] "
+                aria-hidden="true">
+                <defs>
+                    <pattern id="0787a7c5-978c-4f66-83c7-11c213f99cb7" width="100" height="100" x="50%" y="-1"
+                        patternUnits="userSpaceOnUse">
+                        <path d="M.5 200V.5H200" fill="none"></path>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" stroke-width="0" fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)">
+                </rect>
+            </svg>
+
         </>
     )
 }
