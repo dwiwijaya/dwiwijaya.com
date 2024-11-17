@@ -1,6 +1,7 @@
 import PageHeading from "@/components/common/PageHeading"
 import Container from "@/components/layouts/partials/Container"
 import Blog from "@/components/views/blog/Blog"
+import SupportContent from "@/components/views/blog/support/SupportContent";
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
@@ -24,6 +25,7 @@ const SupportPage = () => {
             <NextSeo title={`${PAGE_TITLE} - Dwisheets`} description={t('Blog.metaDesc')} />
 
             <Container data-aos='fade-up'>
+                <SupportContent/>
             </Container>
         </>
     )

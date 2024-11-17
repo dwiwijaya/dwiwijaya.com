@@ -7,7 +7,7 @@ const Layout = ({ lastUpdate, children }) => {
     return (
         <>
             <Sidebar lastUpdate={lastUpdate} />
-            <div className='group/main main ml-0 lg:ml-64 '>
+            <div className='group/main sidebar-expanded main ml-0 lg:ml-64 '>
                 <Overlay />
                 {children}
             </div>

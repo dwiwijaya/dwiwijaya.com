@@ -7,7 +7,7 @@ const Container = ({ children, className = '', ...others }) => {
 
   const router = useRouter();
   const pageName = router.pathname.split('/')[1];
-  const isBlog = router.pathname.startsWith('/blog/');
+  const isBlog = router.pathname.startsWith('/blog//');
 
   return (
 

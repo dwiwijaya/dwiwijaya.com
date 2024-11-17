@@ -54,21 +54,32 @@ const Sidebar = ({ className, lastUpdate }) => {
             }
         };
 
+
         const handleResize = () => {
             if (window.innerWidth <= 1024) {
-                setToggle(false); // If the screen width is <= 1024px, close the sidebar
+                setToggle(false);
             }
         };
-
+        const handleCollapsed = () => {
+            if (window.innerWidth <= 1024) {
+                document.querySelector('.main').classList.add('sidebar-collapsed');
+            } else {
+                document.querySelector('.main').classList.remove('sidebar-collapsed');
+            }
+        };
         document.querySelector('.main').classList.toggle('sidebar-expanded', toggle);
         handleBodyScroll();
 
         document.addEventListener('mousedown', handleClickOutside);
         window.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleCollapsed);
+        handleCollapsed();
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
             window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleCollapsed);
+            handleCollapsed();
             document.body.style.overflow = ''; // Reset body overflow when component unmounts
         };
     }, [toggle]);

@@ -149,6 +149,20 @@ html {
 .slick-dots li button:before {
   color: var(--text-color) !important;
 }
+.slick-list{
+  /* height: 300px !important; */
+}
+.slick-track {
+  height: inherit !important;
+}
+
+.slick-slide {
+  height: inherit !important;
+}
+
+.slick-slide > div {
+  height: 100%;
+}
 
 @media screen and (max-width: 576px) {
   .slick-dots {

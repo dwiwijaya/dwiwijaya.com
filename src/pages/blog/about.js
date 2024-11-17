@@ -1,5 +1,6 @@
 import PageHeading from "@/components/common/PageHeading"
 import Container from "@/components/layouts/partials/Container"
+import AboutContent from "@/components/views/blog/about/AboutContent";
 import Blog from "@/components/views/blog/Blog"
 import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
@@ -24,6 +25,7 @@ const BlogPage = () => {
             <NextSeo title={`${PAGE_TITLE} - Dwisheets`} description={t('Blog.metaDesc')} />
 
             <Container data-aos='fade-up'>
+                <AboutContent/>
             </Container>
         </>
     )

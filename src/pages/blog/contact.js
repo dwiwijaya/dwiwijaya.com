@@ -5,6 +5,8 @@ import { useTranslations } from "next-intl";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import CollectionPage from "./collection";
+import ContactContent from "@/components/views/blog/contact/ContactContent";
 
 
 const ContactPage = () => {
@@ -24,6 +26,7 @@ const ContactPage = () => {
             <NextSeo title={`${PAGE_TITLE} - Dwisheets`} description={t('Blog.metaDesc')} />
 
             <Container data-aos='fade-up'>
+                <ContactContent/>
             </Container>
         </>
     )

@@ -34,7 +34,7 @@ const Breadcrumbs = () => {
   })
 
   return (
-    <nav aria-label="Breadcrumbs" className='flex items-center gap-2'>
+    <nav aria-label="Breadcrumbs" className='flex items-center gap-2 mb-4'>
       <Link href="/">
         Dwi Wijaya
       </Link>

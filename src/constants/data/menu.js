@@ -115,22 +115,6 @@ export const BLOG_MENU_ITEMS = [
         },
     },
     {
-        href: "/blog/about",
-        iconClass: "fad fa-info-circle",
-        label: {
-            en: "About",
-            id: "Tentang",
-        },
-    },
-    {
-        href: "/blog/contact",
-        iconClass: "fad fa-envelope",
-        label: {
-            en: "Contact",
-            id: "Kontak",
-        },
-    },
-    {
         href: "/blog/account",
         iconClass: "fad fa-user",
         label: {
@@ -139,11 +123,27 @@ export const BLOG_MENU_ITEMS = [
         },
     },
     {
+        href: "/blog/about",
+        iconClass: "fad fa-info-circle",
+        label: {
+            en: "About",
+            id: "Tentang",
+        },
+    },
+    {
         href: "/blog/support-author",
         iconClass: "fad fa-heart",
         label: {
             en: "Support",
             id: "Dukung",
+        },
+    },
+    {
+        href: "/blog/contact",
+        iconClass: "fad fa-envelope",
+        label: {
+            en: "Contact",
+            id: "Kontak",
         },
     },
 ];
