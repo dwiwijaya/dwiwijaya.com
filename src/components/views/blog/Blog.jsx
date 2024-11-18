@@ -43,7 +43,7 @@ const Blog = () => {
             </div>
 
             <svg
-                className="absolute inset-0 -z-10 h-full w-full stroke-stroke [mask-image:radial-gradient(50%_50%_at_top_center,white,transparent)]"
+                className="absolute inset-0 -z-10 h-full w-full stroke-stroke [mask-image:radial-gradient(50%_15%_at_top_center,white,transparent)]"
                 aria-hidden="true"
             >
                 <defs>
