@@ -6,19 +6,19 @@ import { calculateReadingTime } from '@/helpers/blog';
 
 const BlogCard = ({ article, isHovered, onHoverStart, onHoverEnd }) => {
     const slideDownVariants = {
-        hidden: { opacity: 0, y: -10 },
+        hidden: { opacity: 0, y: -20 },
         visible: { opacity: 1, y: 0, },
     };
 
     return (
-        <div href={`/blog/${article.slug}`}>
+        <div href={`/blog/${article.slug}`} className='bg-container border border-stroke rounded-xl p-3 h-full min-h-full'>
             <div
-                className="flex flex-col gap-3 h-full"
+                className="flex flex-col gap-3 h-full "
                 onMouseEnter={onHoverStart}
                 onMouseLeave={onHoverEnd}
             >
                 <Image
-                    className="object-cover max-h-52 min-h-52 w-full"
+                    className="object-cover max-h-52 min-h-52 w-full rounded-xl"
                     src={article.cover_image}
                     alt={article.title}
                     width={400}
@@ -27,15 +27,16 @@ const BlogCard = ({ article, isHovered, onHoverStart, onHoverEnd }) => {
                 <div className="flex flex-col h-full justify-between gap-3">
                     <div className="">
                         <div className="flex-1">
-                            <h2 className="text-xl leading-6 font-semibold text-title line-clamp-1">{article.title}</h2>
-                            <p className="text-subtext leading-5 mt-2 line-clamp-2">{article.excerpt}</p>
+                            <h2 className="text-lg leading-6 font-semibold text-title line-clamp-2">{article.title}</h2>
+                            <p className="text-subtext text-sm leading-5 mt-2 line-clamp-3">{article.excerpt}</p>
                         </div>
                     </div>
-                    <div className="flex justify-between  px-0.5 text-subtext text-xs">
-                        
-                        <p className='text-subtext text-sm'>
+                    <hr className="hr !my-0" />
+                    <div className="flex justify-between text-subtext text-xs mb-1">
+
+                        <p className='text-subtext font-medium'>
                             Nov 24, 2024
-                            </p>
+                        </p>
 
                         <motion.div
                             variants={slideDownVariants}

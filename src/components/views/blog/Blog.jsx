@@ -43,7 +43,7 @@ const Blog = () => {
             </div>
 
             <svg
-                className="absolute inset-0 -z-10 h-full w-full stroke-stroke [mask-image:radial-gradient(50%_15%_at_top_center,white,transparent)]"
+                className="absolute inset-0 -z-10 h-full w-full stroke-stroke [mask-image:radial-gradient(50%_25%_at_top_center,white,transparent)]"
                 aria-hidden="true"
             >
                 <defs>
@@ -78,32 +78,17 @@ const Blog = () => {
                         />
                     ))}
                 </BlogCarousel>
-
-                <div className="">
-                    <div className="mb-4">
-                        <h2 className="text-xl sm:text-2xl font-semibold text-text">Latest Sheets</h2>
-                        <h3 className='hidden sm:block'>Discover the most recent collections of sheets</h3>
-                    </div>
-                    <div className="grid grid-cols-1 group-[.sidebar-collapsed]/main:sm:grid-cols-2  md:grid-cols-2 xl:grid-cols-3 gap-8">
-                        {BLOG_DUMMY.articles.map((article, index) => (
-                            <BlogCard
-                                key={index}
-                                article={article}
-                                isHovered={hoveredIndex === index}
-                                onHoverStart={() => setHoveredIndex(index)}
-                                onHoverEnd={() => setHoveredIndex(null)}
-                            />
-                        ))}
-                    </div>
-                </div>
-
-
-                <div className="flex flex-col">
-                    <h3 className="text-lg font-semibold text-title text-center">
-                        You can acquire a lot of knowledge without ever going to school.
-                    </h3>
-                    <p className='text-subtext text-center'>~ Franz Grillparzer</p>
-                </div>
+                <BlogCarousel title="Latest Sheets" desc="Discover the most recent sheets" >
+                    {BLOG_DUMMY.articles.map((article, index) => (
+                        <BlogCard
+                            key={index}
+                            article={article}
+                            isHovered={hoveredIndex === index}
+                            onHoverStart={() => setHoveredIndex(index)}
+                            onHoverEnd={() => setHoveredIndex(null)}
+                        />
+                    ))}
+                </BlogCarousel>
 
             </div>
         </>

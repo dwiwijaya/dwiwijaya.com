@@ -18,6 +18,7 @@ const BlogCarousel = ({ children, title, desc }) => {
         infinite: true,
         arrows: false,
         adaptiveHeight: true,
+        varaibleWidth : true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
