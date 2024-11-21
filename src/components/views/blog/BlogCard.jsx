@@ -27,47 +27,49 @@ const BlogCard = ({ article, isHovered, onHoverStart, onHoverEnd }) => {
                 <div className="flex flex-col h-full justify-between gap-3">
                     <div className="">
                         <div className="flex-1">
-                            <h2 className="text-lg leading-6 font-semibold text-title line-clamp-2">{article.title}</h2>
-                            <p className="text-subtext text-sm leading-5 mt-2 line-clamp-3">{article.excerpt}</p>
+                            <h2 title={article.title} className="text-lg leading-6 font-semibold text-title line-clamp-1">{article.title}</h2>
+                            <p title={article.excerpt} className="text-subtext text-sm leading-5 mt-2 line-clamp-3">{article.excerpt}</p>
                         </div>
                     </div>
-                    <hr className="hr !my-0" />
-                    <div className="flex justify-between text-subtext text-xs mb-1">
+                    <div className="flex flex-col mb-1">
+                        <hr className="hr !my-0 !mb-3" />
+                        <div className="flex justify-between text-subtext text-xs ">
 
-                        <p className='text-subtext font-medium'>
-                            Nov 24, 2024
-                        </p>
+                            <p className='text-subtext font-medium'>
+                                Nov 24, 2024
+                            </p>
 
-                        <motion.div
-                            variants={slideDownVariants}
-                            initial="visible"
-                            animate={isHovered ? 'hidden' : 'visible'}
-                            className={`flex justify-between gap-2 ${isHovered && 'hidden'}`}
-                        >
-                            <div className="flex items-center gap-1">
-                                <i className="fal fa-eye" />
-                                <span className="ml-0.5 text-xs font-medium">{article.views}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <i className="fal fa-comment-lines" />
-                                <span className="ml-0.5 text-xs font-medium">{2}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <i className="fal fa-clock" size={14} />
-                                <span className="ml-0.5 text-xs font-medium">
-                                    {calculateReadingTime(article?.content) ?? 0} MINS READ
-                                </span>
-                            </div>
-                        </motion.div>
-                        <motion.div
-                            variants={slideDownVariants}
-                            initial="hidden"
-                            animate={isHovered ? 'visible' : 'hidden'}
-                            className={`flex items-center gap-1 text-primary' ${!isHovered && 'hidden'}`}
-                        >
-                            <span className="mr-1 text-xs font-medium">READ MORE</span>
-                            <i className="fad fa-arrow-right" size={16} />
-                        </motion.div>
+                            <motion.div
+                                variants={slideDownVariants}
+                                initial="visible"
+                                animate={isHovered ? 'hidden' : 'visible'}
+                                className={`flex justify-between gap-2 ${isHovered && 'hidden'}`}
+                            >
+                                <div className="flex items-center gap-1">
+                                    <i className="fal fa-eye" />
+                                    <span className="ml-0.5 text-xs font-medium">{article.views}</span>
+                                </div>
+                                <div className="flex items-center gap-1">
+                                    <i className="fal fa-comment-lines" />
+                                    <span className="ml-0.5 text-xs font-medium">{2}</span>
+                                </div>
+                                <div className="flex items-center gap-1">
+                                    <i className="fal fa-clock" size={14} />
+                                    <span className="ml-0.5 text-xs font-medium">
+                                        {calculateReadingTime(article?.content) ?? 0} MINS READ
+                                    </span>
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                variants={slideDownVariants}
+                                initial="hidden"
+                                animate={isHovered ? 'visible' : 'hidden'}
+                                className={`flex items-center gap-1 text-primary' ${!isHovered && 'hidden'}`}
+                            >
+                                <span className="mr-1 text-xs font-medium">READ MORE</span>
+                                <i className="fad fa-arrow-right" size={16} />
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>
