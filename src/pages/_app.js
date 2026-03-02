@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react"; // Tambahkan useState
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { Onest } from 'next/font/google';
@@ -30,10 +30,17 @@ const ProgressBar = dynamic(
   { ssr: false }
 );
 
-export default function App({ Component, pageProps, lastCommitDate, messages }) {
+export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const seoConfig = getDefaultSEOConfig(router.locale);
+  const { locale } = router;
+  const seoConfig = getDefaultSEOConfig(locale);
+
+  // 1. Buat State untuk data yang tadinya di getInitialProps
+  const [lastCommitDate, setLastCommitDate] = useState(null);
+  const [messages, setMessages] = useState(null);
+
   useEffect(() => {
+    // 2. Inisialisasi AOS
     Aos.init({
       duration: 400,
       delay: 0,
@@ -41,16 +48,29 @@ export default function App({ Component, pageProps, lastCommitDate, messages }) 
       easing: 'ease-out',
       offset: 50,
     });
-  }, []);
-  
 
-  return <>
+    // 3. Fetch data secara Client-side
+    const fetchData = async () => {
+      try {
+        const date = await getLastCommitDate();
+        setLastCommitDate(date);
+        
+        const langMessages = (await import(`../../locales/${locale}.json`)).default;
+        setMessages(langMessages);
+      } catch (error) {
+        console.error("Failed to load data:", error);
+      }
+    };
+
+    fetchData();
+  }, [locale]); // Trigger ulang jika locale berubah
+
+  return (
     <NextIntlClientProvider
-      locale={router.locale}
+      locale={locale}
       timeZone="Asia/Jakarta"
       messages={messages}
     >
-
       <DefaultSeo {...seoConfig} />
 
       <style jsx global>
@@ -78,12 +98,7 @@ export default function App({ Component, pageProps, lastCommitDate, messages }) 
         </Layout>
       </ThemeProvider>
     </NextIntlClientProvider>
-  </>
+  );
 }
-App.getInitialProps = async ({ router }) => {
-  const { locale } = router;
-  const lastCommitDate = await getLastCommitDate();
 
-  const messages = (await import(`../../locales/${locale}.json`)).default
-  return { lastCommitDate, messages };
-};
+// 4. HAPUS App.getInitialProps di bawah ini
